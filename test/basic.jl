@@ -1,5 +1,9 @@
-A = Array{Int}(2,4,2)
 
+using EllipsisNotation
+using Test
+A = zeros(2,4,2)
+
+@test size(A[..]) == (2,4,2)
 A[..,1] = [2 1 4 5
            2 2 3 6]
 
@@ -26,8 +30,8 @@ B = [3 4
 
 @test A[:,1,2] == A[..,1,2] == @view A[..,1,2]
 
-# [..]
-C = zeros(B)
+# testing [..]
+C = similar(B)
 
 C[:] = B[..]
 @test B == C

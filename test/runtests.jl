@@ -1,5 +1,4 @@
-using EllipsisNotation
-using Base.Test
+using Test
 
-include("basic.jl")
-include("more_generic.jl")
+@testset "Basic" begin include("basic.jl") end
+@testset "more generic" begin include("more_generic.jl") end
