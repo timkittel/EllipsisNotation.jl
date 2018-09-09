@@ -22,8 +22,6 @@ end
     to_indices(A, axes(A), I)
 end
 
-@inline to_indices(A, ::Val{:..}) = to_indices(A, (..,))
-
 export ..
 
 end # module

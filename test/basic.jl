@@ -35,10 +35,12 @@ C = similar(B)
 
 C[:] = B[..]
 @test B == C
+@test B ≢ C
 C[1,1] += 1
 @test B != C
 
 C[..] = B[..]
 @test B == C
+@test B ≢ C
 C[1,1] += 1
 @test B != C
